@@ -30,15 +30,12 @@ public class LogInStepDefinition {
         Assert.assertEquals("Cars.com | Sign Up",title);
     }
 
-    @Then("^user enter email$")
-    public void user_enter_email() throws Throwable {
-        driver.findElement(By.xpath("//input[@type='text']")).sendKeys("zaytuna128@gmail.com");
+    @Then("^user enter \"(.*)\" and \"(.*)\"$")
+    public void user_enter_email_password(String email, String password) throws Throwable {
+        driver.findElement(By.xpath("//input[@type='text']")).sendKeys(email);
+        driver.findElement(By.xpath("//input[@type='password']")).sendKeys(password);
     }
 
-    @Then("^user enter password$")
-    public void user_enter_password() throws Throwable {
-        driver.findElement(By.xpath("//input[@type='password']")).sendKeys("zana195726");
-    }
 
     @Then("^user click on logIn button$")
     public void user_click_on_logIn_button() throws Throwable {
