@@ -1,166 +1,225 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("C:/Users/Elzat/IdeaProjects/CarsBDD/Cars/src/main/java/features/Login.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Login.feature");
 formatter.feature({
   "line": 1,
-  "name": "Cars login Feature",
+  "name": "Crowdstreet login Feature",
   "description": "",
-  "id": "cars-login-feature",
+  "id": "crowdstreet-login-feature",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
   "line": 2,
-  "name": "Cras login Test Scenario",
+  "name": "Crowdstreet create account Test Scenario",
   "description": "",
-  "id": "cars-login-feature;cras-login-test-scenario",
+  "id": "crowdstreet-login-feature;crowdstreet-create-account-test-scenario",
   "type": "scenario_outline",
   "keyword": "Scenario Outline"
 });
 formatter.step({
   "line": 4,
-  "name": "user is already on login page",
+  "name": "user click on CREATE AN ACOOUNT button",
   "keyword": "Given "
 });
 formatter.step({
   "line": 5,
-  "name": "title of login page is Cars",
+  "name": "title of login page is crowdstreet",
   "keyword": "When "
 });
 formatter.step({
   "line": 6,
-  "name": "user enter \"\u003cemail\u003e\" and \"\u003cpassword\u003e\"",
+  "name": "user enter \"\u003cfirstname\u003e\" and \"\u003clastname\u003e\" and \"\u003cemail\u003e\"",
   "keyword": "Then "
 });
 formatter.step({
   "line": 7,
-  "name": "user click on logIn button",
+  "name": "user enter \"\u003cpassword\u003e\" and \"\u003cconfirmedpassword\u003e\"",
   "keyword": "Then "
 });
 formatter.step({
   "line": 8,
-  "name": "user is in the home page",
+  "name": "user click on Yes button",
   "keyword": "Then "
 });
 formatter.step({
   "line": 9,
+  "name": "user click on checkbox",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 10,
+  "name": "user click on create an account button",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 11,
   "name": "browser is close",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 11,
+  "line": 13,
   "name": "",
   "description": "",
-  "id": "cars-login-feature;cras-login-test-scenario;",
+  "id": "crowdstreet-login-feature;crowdstreet-create-account-test-scenario;",
   "rows": [
     {
       "cells": [
+        "firstname",
+        "lastname",
         "email",
-        "password"
+        "password",
+        "confirmedpassword"
       ],
-      "line": 12,
-      "id": "cars-login-feature;cras-login-test-scenario;;1"
+      "line": 14,
+      "id": "crowdstreet-login-feature;crowdstreet-create-account-test-scenario;;1"
     },
     {
       "cells": [
+        "zaytuna",
+        "murat",
         "zaytuna128@gmail.com",
-        "zana195726"
+        "ELZAT180616@",
+        "ELZAT180616@"
       ],
-      "line": 13,
-      "id": "cars-login-feature;cras-login-test-scenario;;2"
+      "line": 15,
+      "id": "crowdstreet-login-feature;crowdstreet-create-account-test-scenario;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.scenario({
-  "line": 13,
-  "name": "Cras login Test Scenario",
+  "line": 15,
+  "name": "Crowdstreet create account Test Scenario",
   "description": "",
-  "id": "cars-login-feature;cras-login-test-scenario;;2",
+  "id": "crowdstreet-login-feature;crowdstreet-create-account-test-scenario;;2",
   "type": "scenario",
   "keyword": "Scenario Outline"
 });
 formatter.step({
   "line": 4,
-  "name": "user is already on login page",
+  "name": "user click on CREATE AN ACOOUNT button",
   "keyword": "Given "
 });
 formatter.step({
   "line": 5,
-  "name": "title of login page is Cars",
+  "name": "title of login page is crowdstreet",
   "keyword": "When "
 });
 formatter.step({
   "line": 6,
-  "name": "user enter \"zaytuna128@gmail.com\" and \"zana195726\"",
+  "name": "user enter \"zaytuna\" and \"murat\" and \"zaytuna128@gmail.com\"",
   "matchedColumns": [
     0,
-    1
+    1,
+    2
   ],
   "keyword": "Then "
 });
 formatter.step({
   "line": 7,
-  "name": "user click on logIn button",
+  "name": "user enter \"ELZAT180616@\" and \"ELZAT180616@\"",
+  "matchedColumns": [
+    3,
+    4
+  ],
   "keyword": "Then "
 });
 formatter.step({
   "line": 8,
-  "name": "user is in the home page",
+  "name": "user click on Yes button",
   "keyword": "Then "
 });
 formatter.step({
   "line": 9,
+  "name": "user click on checkbox",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 10,
+  "name": "user click on create an account button",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 11,
   "name": "browser is close",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "LogInStepDefinition.user_is_already_on_login_page()"
+  "location": "LogInStepDefinition.user_click_on_CREATE_AN_ACOOUNT_button()"
 });
 formatter.result({
-  "duration": 47144465102,
+  "duration": 23442019601,
   "status": "passed"
 });
 formatter.match({
-  "location": "LogInStepDefinition.title_of_login_page_is_Cars()"
+  "location": "LogInStepDefinition.title_of_login_page_is_crowdstreet()"
 });
 formatter.result({
-  "duration": 25029156,
+  "duration": 15471395,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "zaytuna128@gmail.com",
+      "val": "zaytuna",
       "offset": 12
     },
     {
-      "val": "zana195726",
-      "offset": 39
+      "val": "murat",
+      "offset": 26
+    },
+    {
+      "val": "zaytuna128@gmail.com",
+      "offset": 38
     }
   ],
-  "location": "LogInStepDefinition.user_enter_email_password(String,String)"
+  "location": "LogInStepDefinition.user_enter_firstname_lastname_email(String,String,String)"
 });
 formatter.result({
-  "duration": 538200524,
+  "duration": 2559410916,
   "status": "passed"
 });
 formatter.match({
-  "location": "LogInStepDefinition.user_click_on_logIn_button()"
+  "arguments": [
+    {
+      "val": "ELZAT180616@",
+      "offset": 12
+    },
+    {
+      "val": "ELZAT180616@",
+      "offset": 31
+    }
+  ],
+  "location": "LogInStepDefinition.user_enter_password_and_confirmedpassword(String,String)"
 });
 formatter.result({
-  "duration": 113453126,
+  "duration": 882684142,
   "status": "passed"
 });
 formatter.match({
-  "location": "LogInStepDefinition.user_is_in_the_home_page()"
+  "location": "LogInStepDefinition.user_click_on_Yes_button()"
 });
 formatter.result({
-  "duration": 10232706554,
+  "duration": 104891967,
+  "status": "passed"
+});
+formatter.match({
+  "location": "LogInStepDefinition.user_click_on_checkbox()"
+});
+formatter.result({
+  "duration": 216198150,
+  "status": "passed"
+});
+formatter.match({
+  "location": "LogInStepDefinition.user_click_on_create_an_account_button()"
+});
+formatter.result({
+  "duration": 71049426,
   "status": "passed"
 });
 formatter.match({
   "location": "LogInStepDefinition.browser_is_close()"
 });
 formatter.result({
-  "duration": 3224356523,
+  "duration": 1881024094,
   "status": "passed"
 });
 });

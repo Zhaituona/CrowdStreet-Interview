@@ -5,6 +5,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
@@ -14,44 +15,92 @@ public class LogInStepDefinition {
 
     WebDriver driver;
 
-    @Given("^user is already on login page$")
-    public void user_is_already_on_login_page() throws Throwable {
+
+
+    @Given("^user click on CREATE AN ACOOUNT button$")
+    public void user_click_on_CREATE_AN_ACOOUNT_button() throws Throwable {
         System.setProperty("webdriver.chrome.driver","C:\\Users\\chromedriver.exe");
         driver= new ChromeDriver();
-        driver.get("https://www.cars.com/profile/secure/signup/?continue=%2F");
+        driver.get("https://test.crowdstreet.com/invexp/properties/all");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.findElement(By.xpath("/html/body/div[2]/section/cars-profiles-lsp/cui-tabs/div/ul[1]/li[1]/div")).click();
+        WebElement createAnAccount = driver.findElement(By.xpath("//a[contains(text(), 'Create An Account')]"));
+        createAnAccount.click();// Write code here that turns the phrase above into concrete actions
+
     }
 
-    @When("^title of login page is Cars$")
-    public void title_of_login_page_is_Cars() throws Throwable {
-        String title = driver.getTitle();
-        Assert.assertEquals("Cars.com | Sign Up",title);
-    }
+    @When("^title of login page is crowdstreet$")
+    public void title_of_login_page_is_crowdstreet() throws Throwable {
+        String title =driver.getTitle();
+        System.out.println("Home page title" +title);
+        Assert.assertEquals("Marketplace | CrowdStreet",title);
 
-    @Then("^user enter \"(.*)\" and \"(.*)\"$")
-    public void user_enter_email_password(String email, String password) throws Throwable {
-        driver.findElement(By.xpath("//input[@type='text']")).sendKeys(email);
-        driver.findElement(By.xpath("//input[@type='password']")).sendKeys(password);
+
     }
 
 
-    @Then("^user click on logIn button$")
-    public void user_click_on_logIn_button() throws Throwable {
-        driver.findElement(By.xpath("//button[@class='cui-button']")).click();
+
+    @Then("^user enter \"([^\"]*)\" and \"([^\"]*)\" and \"([^\"]*)\"$")
+    public void user_enter_firstname_lastname_email(String firstname, String lastname, String email) throws Throwable {
+        driver.findElement(By.xpath("//input[@id='firstName']")).sendKeys(firstname);
+        driver.findElement(By.xpath("//input[@id='lastName']")).sendKeys(lastname);
+        driver.findElement(By.xpath("//input[@id='email']")).sendKeys(email);
     }
 
-    @Then("^user is in the home page$")
-    public void user_is_in_the_home_page() throws Throwable {
-        Thread.sleep(3000);
-      boolean b=  driver.findElement(By.xpath("//img[@id='cars-com-logo']")).isDisplayed();
-      Assert.assertTrue(b);
+    @Then("^user enter \"([^\"]*)\" and \"([^\"]*)\"$")
+    public void user_enter_password_and_confirmedpassword(String password, String confirmedpassword) throws Throwable {
+
+             driver.findElement(By.xpath("//input[@id='password']")).sendKeys(password);
+             driver.findElement(By.xpath("//input[@id='confirmPassword']")).sendKeys(confirmedpassword);
+         }
+
+    @Then("^user click on Yes button$")
+    public void user_click_on_Yes_button() throws Throwable {
+        driver.findElement(By.xpath("//input[@id='accreditedYes']")).click();
+        // Write code here that turns the phrase above into concrete actions
+
     }
+
+    @Then("^user click on checkbox$")
+    public void user_click_on_checkbox() throws Throwable {
+       driver.findElement(By.xpath("//input[@id='hasAgreedTos']")).click();
+
+    }
+
+
+    @Then("^user click on create an account button$")
+    public void user_click_on_create_an_account_button() throws Throwable {
+        driver.findElement(By.xpath("//span[contains(text(), 'Create an account')]")).click();
+        // Write code here that turns the phrase above into concrete actions
+
+    }
+
+
+
     @Then("^browser is close$")
     public void browser_is_close() throws Throwable {
-       driver.quit();
-}
+
+         driver.quit();
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
+
+
+

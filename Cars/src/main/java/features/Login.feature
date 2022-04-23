@@ -1,13 +1,15 @@
-Feature:Cars login Feature
-Scenario Outline:Cras login Test Scenario
+Feature:Crowdstreet login Feature
+Scenario Outline:Crowdstreet create account Test Scenario
 
-Given user is already on login page
-When title of login page is Cars
-Then user enter "<email>" and "<password>"
-Then user click on logIn button
-Then user is in the home page
+Given user click on CREATE AN ACOOUNT button
+When title of login page is crowdstreet
+Then user enter "<firstname>" and "<lastname>" and "<email>"
+Then user enter "<password>" and "<confirmedpassword>"
+Then user click on Yes button
+Then user click on checkbox
+Then user click on create an account button
 Then browser is close
 
 Examples:
-  |email                | password|
-  |zaytuna128@gmail.com |zana195726|
+  |firstname | lastname  | email              | password   | confirmedpassword |
+  |zaytuna   | murat     |zaytuna128@gmail.com|ELZAT180616@|ELZAT180616@|
